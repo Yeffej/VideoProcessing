@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 100vh;
+    width: 100vw;
+}
+.container {
+    position: relative;
+    background-color: #fff;
+    height: 60%;
+    width: 50%;
+}
+.canvas1 {
+    height: 100%;
+    width: 100%;
+}
+.video1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
