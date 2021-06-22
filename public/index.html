@@ -8,12 +8,19 @@
     <title>Video Processing</title>
 </head>
 <body>
+    <section class="effects">
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </section>
     <section class="container">
         <canvas class="canvas1" id="myCanvas"></canvas>
-        <button onclick="stop()">STOP</button>
-        <button onclick="StartRecording()">Start</button>
     </section>
+    <button class="stopBt" onclick="Stop()">STOP</button>
+    <button class="startBt" onclick="StartRecording()">Start</button>
 
+    <script src="../src/effects.js"></script>
     <script src="../src/main.js"></script>
 </body>
 </html>

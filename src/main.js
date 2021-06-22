@@ -1,18 +1,26 @@
 /** @type {HTMLVideoElement} */
 const VIDEO = document.createElement('video')
+const mainBGColor = "#ffffff";
 let TRACKS
 /** @type {HTMLCanvasElement} */
 const canvas = document.querySelector('#myCanvas')
 const ctx = canvas.getContext('2d')
+let LOOP_ID;
+const SIZE = 300;
+const effects = new Effects()
+const AllEfxArray = ["Normal", "grayscale", "brightscale",
+ "doppelganger", "colorreverse", "ghost", "mirror"]
 
-// window.addEventListener('load', () => {
-// })
+let EFX_INDEX = 0
 
-function stop() {
+function Stop() {
     console.log(TRACKS)
     TRACKS.forEach(track => {
         track.stop()
     });
+
+    clearTimeout( LOOP_ID )
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 async function StartRecording() {
@@ -33,8 +41,22 @@ async function StartRecording() {
 }
 
 function Animate() {
-    setInterval(()=> {
-        ctx.drawImage(VIDEO, 0, 0)
+    LOOP_ID = setInterval(()=> {
+        const min  = Math.min(VIDEO.videoWidth, VIDEO.videoHeight)
+        const sx = (VIDEO.videoWidth - min) /2
+        const sy = (VIDEO.videoHeight - min) /2
+        const Xratio = VIDEO.videoWidth/min
+        const Yratio = VIDEO.videoHeight/min
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(VIDEO, sx, sy, min, min, 0, 0, 
+            canvas.width, canvas.height)
+        effects.Apply(AllEfxArray[EFX_INDEX])
+        
     }, 40)
     
+}
+
+function setEffect(value = 0) {
+    EFX_INDEX = value
 }
