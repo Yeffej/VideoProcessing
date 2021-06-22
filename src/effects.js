@@ -13,13 +13,13 @@ class Effects {
             case "colorreverse": 
                 this._ColorReverse();
                 break;
-            case "Normal":
+            case "mirror":
                 this._Normal();
                 break;
             case "ghost":
                 this._Ghost();
                 break;
-            case "mirror": 
+            case "normal": 
                 break;
         }
        

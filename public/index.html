@@ -9,16 +9,24 @@
 </head>
 <body>
     <section class="effects">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <h2 class="effects_title">Aplicar Efectos:</h2>
+        <div class="effects_actions">
+            <button class="button" onclick="setEffect(0)">Normal</button>
+            <button class="button" onclick="setEffect(1)">Gray Scale</button>
+            <button class="button" onclick="setEffect(2)">Bright Scale</button>
+            <button class="button" onclick="setEffect(3)">Doppelganger</button>
+            <button class="button" onclick="setEffect(4)">Color Reverse</button>
+            <button class="button" onclick="setEffect(5)">Ghost</button>
+            <button class="button" onclick="setEffect(6)">Mirror</button>
+        </div>
     </section>
     <section class="container">
         <canvas class="canvas1" id="myCanvas"></canvas>
     </section>
-    <button class="stopBt" onclick="Stop()">STOP</button>
-    <button class="startBt" onclick="StartRecording()">Start</button>
+    <div>
+        <button class="btn stopBt" onclick="Stop()">STOP</button>
+        <button class="btn startBt" onclick="StartRecording()">START</button>
+    </div>
 
     <script src="../src/effects.js"></script>
     <script src="../src/main.js"></script>

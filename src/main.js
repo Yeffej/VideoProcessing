@@ -8,7 +8,7 @@ const ctx = canvas.getContext('2d')
 let LOOP_ID;
 const SIZE = 300;
 const effects = new Effects()
-const AllEfxArray = ["Normal", "grayscale", "brightscale",
+const AllEfxArray = ["normal", "grayscale", "brightscale",
  "doppelganger", "colorreverse", "ghost", "mirror"]
 
 let EFX_INDEX = 0
